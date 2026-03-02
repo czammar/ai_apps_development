@@ -16,3 +16,9 @@ pip install fastapi uvicorn scikit-learn numpy pydantic
 ```
 uvicorn src.diabetes.diabetes_app:app --reload 
 ```
+
+
+```
+uvicorn src.images_app.backend.main:app --reload 
+streamlit run src/images_app/frontend/app.py 
+```

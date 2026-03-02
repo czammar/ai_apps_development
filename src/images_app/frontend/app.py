@@ -1,25 +1,27 @@
 import streamlit as st
 import requests
 from PIL import Image
-import io
 
-st.title("Convertidor de Imagen a Escala de Grises")
+st.title("Clasificador de Imágenes con ResNet")
 
 uploaded_file = st.file_uploader("Sube una imagen", type=["png", "jpg", "jpeg"])
 
 if uploaded_file is not None:
-    st.image(uploaded_file, caption="Imagen Original", use_column_width=True)
 
-    if st.button("Convertir a Gris"):
-        files = {"file": uploaded_file.getvalue()}
-        
+    image = Image.open(uploaded_file)
+    st.image(image, caption="Imagen subida", use_column_width=True)
+
+    if st.button("Clasificar"):
         response = requests.post(
-            "http://localhost:8000/convert",
-            files={"file": uploaded_file}
+            "http://localhost:8000/predict",
+            files={"file": uploaded_file.getvalue()}
         )
 
         if response.status_code == 200:
-            img = Image.open(io.BytesIO(response.content))
-            st.image(img, caption="Imagen en Gris", use_column_width=True)
+            result = response.json()
+
+            st.success("Predicción:")
+            st.write(f"**Objeto:** {result['label']}")
+            st.write(f"**Confianza:** {result['confidence']:.4f}")
         else:
-            st.error("Error procesando la imagen")
+            st.error("Error en el backend")
