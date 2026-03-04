@@ -22,3 +22,9 @@ uvicorn src.diabetes.diabetes_app:app --reload
 uvicorn src.images_app.backend.main:app --reload 
 streamlit run src/images_app/frontend/app.py 
 ```
+
+# 4. Other Apps
+
+```
+uvicorn src.restaurant.main:app --reload
+```
