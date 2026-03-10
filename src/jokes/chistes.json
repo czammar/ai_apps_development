@@ -1,4 +1,11 @@
 {
-  "vacas": ["¿Por qué las vacas viajan al espacio? ¡Para ver la Vaca Láctea!"],
-  "ovnis": ["¿Qué hace un marciano cuando se aburre? ¡Abduce el tiempo!"]
+    "vacas": [
+        "que le dijo una vaca a otra? Muuuuchas gracias"
+    ],
+    "ovnis": [
+        "¿Qué hace un marciano cuando se aburre? ¡Abduce el tiempo!"
+    ],
+    "impresoras": [
+        "Que le dijo una impresora a otra? Somos impresionantes"
+    ]
 }

@@ -1,0 +1,6 @@
+{
+  "python": "Python es un lenguaje de programación muy usado en ciencia de datos y desarrollo web.",
+  "fastapi": "FastAPI es un framework moderno de Python para crear APIs rápidas.",
+  "langgraph": "LangGraph es una librería para construir agentes usando grafos de estados.",
+  "api": "Una API es una interfaz que permite que dos programas se comuniquen entre sí."
+}
